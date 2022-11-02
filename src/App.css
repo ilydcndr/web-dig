@@ -1,6 +1,5 @@
 .weather {
   margin: 30vh auto;
-  width: 50%;
   border: solid grey;
   padding: 10px;
 }
@@ -29,6 +28,7 @@
 }
 
 .weather-content {
+  overflow-x: auto;
   display: flex;
   justify-content: space-between;
 }
@@ -50,4 +50,10 @@
   font-size: large;
   font-weight: bold;
   text-decoration: underline;
+}
+
+@media screen and (min-width: 1024px) {
+  .weather { 
+    width: 50%;
+  }
 }
