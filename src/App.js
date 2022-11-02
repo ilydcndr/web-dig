@@ -23,7 +23,10 @@ function App() {
     }, [])
      
 		const gethourly = (data) => {
-			setfilteredData(data?.forecast.forecastday[0].hour.filter((item) => new Date(item.time) >= new Date()).slice(0,8))
+			const dateNoSecond = new Date().setSeconds(0,0);
+			const dateNoMinute = new Date(dateNoSecond).setMinutes(0,0);
+			 
+			setfilteredData(data?.forecast.forecastday[0].hour.filter((item) => new Date(item.time) >= new Date(dateNoMinute)).slice(0,8))
 		}
 
 		const selectTemp = (selectedTemp) => {
